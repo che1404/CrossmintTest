@@ -49,8 +49,8 @@ class MegaverseMapFactory {
             let diagonal1 = Postion(x: i, y: i)
             let diagonal2 = Postion(x: i, y: size - i - 1)
             
-            producers.append(MegaverseMapFactory.createPolyanetProducer(dataManager: dataManager, position: diagonal1))
-            producers.append(MegaverseMapFactory.createPolyanetProducer(dataManager: dataManager, position: diagonal2))
+            producers.append(MegaverseMapFactory.createPolyanetProducer(dataManager: dataManager, position: diagonal1).delay(1.0, on: QueueScheduler.main))
+            producers.append(MegaverseMapFactory.createPolyanetProducer(dataManager: dataManager, position: diagonal2).delay(1.0, on: QueueScheduler.main))
         }
         
         SignalProducer(producers)
